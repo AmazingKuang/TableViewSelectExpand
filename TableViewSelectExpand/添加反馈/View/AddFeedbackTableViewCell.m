@@ -32,10 +32,10 @@
 - (void)setChildModel:(ChildFeedbackModel *)childModel{
     _childModel = childModel;
     if (_childModel.isSelect) {
-            self.selectImageView.image = KImageName(@"feedback_select");
+            self.selectImageView.image = [UIImage  imageNamed:@"feedback_select"];
 
     }else{
-        self.selectImageView.image = KImageName(@"feedback_noSelect");
+        self.selectImageView.image = [UIImage  imageNamed:@"feedback_noSelect"];
 
     }
     self.titleLabel.text = _childModel.answer;
