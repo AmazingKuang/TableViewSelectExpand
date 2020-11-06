@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "AddFeedbackViewController.h"
+#import "MainViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -19,7 +20,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    AddFeedbackViewController *vc = [[AddFeedbackViewController alloc] init];
+    MainViewController *vc = [[MainViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nav;
     

@@ -1,36 +1,19 @@
 //
-//  AddFeedbackViewController.m
-//  GZDoctor
+//  MultipleSellectViewController.m
+//  TableViewSelectExpand
 //
-//  Created by khj on 2020/8/2.
-//  Copyright © 2020 张浩. All rights reserved.
+//  Created by khj on 2020/11/6.
+//  Copyright © 2020 khj. All rights reserved.
 //
-#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
-#define SCREENWIDTH  [UIScreen mainScreen].bounds.size.width
-#define KMainColor UIColorFromRGB(0x2ECE6F) //预约颜色
-#define KWhiteColor [UIColor whiteColor]
-#define kFont(a) [UIFont systemFontOfSize:(a)]
-#define TEXT_SemiBoldFont(s) [UIFont fontWithName:@"PingFangSC-SemiBold" size:s]
-#define TEXT_MediumFont(s)  [UIFont fontWithName:@"PingFangSC-Medium" size:s]
-#define TEXT_RegularFont(s)  [UIFont fontWithName:@"PingFangSC-Regular" size:s]
-#define TEXT_LightFont(s) [UIFont fontWithName:@"PingFangSC-Light" size:s]
 
-#define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? (CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size)||CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size)||CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size)) : NO)
-
-
-// 顶部安全距离
-#define kNavTopHeight (iPhoneX ? 88 : 64)
-
-
-#import "AddFeedbackViewController.h"
+#import "MultipleSellectViewController.h"
 #import "AddFeedbackModel.h"
 #import "ChildFeedbackModel.h"
 #import "AddFeedbackTableViewCell.h"
 
 static const CGFloat AddFeedbackBottomH = 60;
 
-@interface AddFeedbackViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface MultipleSellectViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, retain) NSMutableArray *totalArray;
 @property (nonatomic, retain) UITableView *tableView;
 
@@ -41,7 +24,7 @@ static const CGFloat AddFeedbackBottomH = 60;
 @property (nonatomic, retain) UIView *bottomView;
 @end
 
-@implementation AddFeedbackViewController
+@implementation MultipleSellectViewController
 
 
 - (NSMutableArray *)totalArray{
@@ -55,7 +38,7 @@ static const CGFloat AddFeedbackBottomH = 60;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"添加反馈";
+    self.title = @"TableView多选";
     
     NSArray *array = @[
         @{@"title" : @"您的睡眠情况如何？",
@@ -186,17 +169,6 @@ static const CGFloat AddFeedbackBottomH = 60;
     self.dataArray[i].isExpand = !self.dataArray[i].isExpand;
     NSIndexSet *index = [NSIndexSet indexSetWithIndex:i];
     [_tableView reloadSections:index withRowAnimation:(UITableViewRowAnimationAutomatic)];
-    /** 如果需要收起上一个分区 就用下面的代码 */
-    //    [self.dataArray enumerateObjectsUsingBlock:^(AddFeedbackModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-    //        if ([obj.title isEqualToString:self.dataArray[i].title]) {
-    //            obj.isExpand = !obj.isExpand;
-    //        }
-    //        else{
-    //            obj.isExpand = NO;
-    //        }
-    //    }];
-        //刷新列表
-    //    [_tableView reloadData];
     
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -207,15 +179,6 @@ static const CGFloat AddFeedbackBottomH = 60;
     //    if (indexPath.row == 0) {
     AddFeedbackTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    if (self.indexPath.section == indexPath.section) {
-        if (self.indexPath == indexPath) {
-            self.dataArray[indexPath.section].content[indexPath.row].isSelect = YES;
-            
-        }else{
-            self.dataArray[indexPath.section].content[indexPath.row].isSelect = NO;
-            
-        }
-    }
     cell.childModel = self.dataArray[indexPath.section].content[indexPath.row];
     
     return cell;
@@ -241,7 +204,7 @@ static const CGFloat AddFeedbackBottomH = 60;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    self.indexPath = indexPath;
+    self.dataArray[indexPath.section].content[indexPath.row].isSelect = !self.dataArray[indexPath.section].content[indexPath.row].isSelect;
     [tableView reloadData];
     
 }
@@ -336,15 +299,14 @@ static const CGFloat AddFeedbackBottomH = 60;
     //    cell.selectedBackgroundView = selectedBackgroundView;
     //    }
 }
-
 /*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

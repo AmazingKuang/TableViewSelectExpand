@@ -12,6 +12,8 @@
 		CE6E9D2F24D80058002C91E9 /* ChildFeedbackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6E9D2624D80058002C91E9 /* ChildFeedbackModel.m */; };
 		CE6E9D3024D80058002C91E9 /* AddFeedbackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6E9D2B24D80058002C91E9 /* AddFeedbackTableViewCell.xib */; };
 		CE6E9D3124D80058002C91E9 /* AddFeedbackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6E9D2C24D80058002C91E9 /* AddFeedbackTableViewCell.m */; };
+		CEA36D9F25553EB400C89CB2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA36D9E25553EB400C89CB2 /* MainViewController.m */; };
+		CEA36DA5255540C400C89CB2 /* MultipleSellectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA36DA4255540C400C89CB2 /* MultipleSellectViewController.m */; };
 		CEEA441B24D3EC81008E4375 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEA441A24D3EC81008E4375 /* AppDelegate.m */; };
 		CEEA442424D3EC82008E4375 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEA442224D3EC82008E4375 /* Main.storyboard */; };
 		CEEA442624D3EC86008E4375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEA442524D3EC86008E4375 /* Assets.xcassets */; };
@@ -41,6 +43,11 @@
 		CE6E9D2A24D80058002C91E9 /* AddFeedbackTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFeedbackTableViewCell.h; sourceTree = "<group>"; };
 		CE6E9D2B24D80058002C91E9 /* AddFeedbackTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddFeedbackTableViewCell.xib; sourceTree = "<group>"; };
 		CE6E9D2C24D80058002C91E9 /* AddFeedbackTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFeedbackTableViewCell.m; sourceTree = "<group>"; };
+		CEA36D9D25553EB400C89CB2 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		CEA36D9E25553EB400C89CB2 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		CEA36DA125553F0800C89CB2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		CEA36DA3255540C400C89CB2 /* MultipleSellectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultipleSellectViewController.h; sourceTree = "<group>"; };
+		CEA36DA4255540C400C89CB2 /* MultipleSellectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultipleSellectViewController.m; sourceTree = "<group>"; };
 		CEEA441624D3EC81008E4375 /* TableViewSelectExpand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewSelectExpand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEA441924D3EC81008E4375 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CEEA441A24D3EC81008E4375 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,14 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE6E9D2024D80058002C91E9 /* 添加反馈 */ = {
+		CE6E9D2024D80058002C91E9 /* 单选与多选 */ = {
 			isa = PBXGroup;
 			children = (
 				CE6E9D2124D80058002C91E9 /* Controller */,
 				CE6E9D2424D80058002C91E9 /* Model */,
 				CE6E9D2924D80058002C91E9 /* View */,
 			);
-			path = "添加反馈";
+			path = "单选与多选";
 			sourceTree = "<group>";
 		};
 		CE6E9D2124D80058002C91E9 /* Controller */ = {
@@ -100,6 +107,8 @@
 			children = (
 				CE6E9D2224D80058002C91E9 /* AddFeedbackViewController.h */,
 				CE6E9D2324D80058002C91E9 /* AddFeedbackViewController.m */,
+				CEA36DA3255540C400C89CB2 /* MultipleSellectViewController.h */,
+				CEA36DA4255540C400C89CB2 /* MultipleSellectViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -146,7 +155,10 @@
 			children = (
 				CEEA441924D3EC81008E4375 /* AppDelegate.h */,
 				CEEA441A24D3EC81008E4375 /* AppDelegate.m */,
-				CE6E9D2024D80058002C91E9 /* 添加反馈 */,
+				CEA36D9D25553EB400C89CB2 /* MainViewController.h */,
+				CEA36D9E25553EB400C89CB2 /* MainViewController.m */,
+				CEA36DA125553F0800C89CB2 /* PrefixHeader.pch */,
+				CE6E9D2024D80058002C91E9 /* 单选与多选 */,
 				CEEA442524D3EC86008E4375 /* Assets.xcassets */,
 				CEEA442A24D3EC86008E4375 /* Info.plist */,
 				CEEA442724D3EC86008E4375 /* LaunchScreen.storyboard */,
@@ -275,6 +287,8 @@
 				CEEA445D24D3EF1D008E4375 /* MJExtensionConst.m in Sources */,
 				CEEA446024D3EF1D008E4375 /* NSString+MJExtension.m in Sources */,
 				CE6E9D3124D80058002C91E9 /* AddFeedbackTableViewCell.m in Sources */,
+				CEA36DA5255540C400C89CB2 /* MultipleSellectViewController.m in Sources */,
+				CEA36D9F25553EB400C89CB2 /* MainViewController.m in Sources */,
 				CEEA445A24D3EF1D008E4375 /* NSObject+MJKeyValue.m in Sources */,
 				CE6E9D2F24D80058002C91E9 /* ChildFeedbackModel.m in Sources */,
 				CEEA445C24D3EF1D008E4375 /* NSObject+MJCoding.m in Sources */,
@@ -425,6 +439,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42272S8D49;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/TableViewSelectExpand/PrefixHeader.pch";
 				INFOPLIST_FILE = TableViewSelectExpand/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -442,6 +457,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42272S8D49;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/TableViewSelectExpand/PrefixHeader.pch";
 				INFOPLIST_FILE = TableViewSelectExpand/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
